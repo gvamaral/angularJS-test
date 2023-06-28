@@ -3,12 +3,15 @@
 
 
 var app = angular.module('weatherApp', []);
+let locationn = ''
+
 
 
 app.controller('WeatherController', function($scope, $http) {
     $scope.weather = {};
     //Getting api
-    $http.get('https://wttr.in/?format=j1')
+    
+    $http.get(`https://wttr.in/${locationn}?format=j1`)
     
     .then(function(response) {
         //Setting the weather scope to the data
@@ -23,10 +26,12 @@ app.controller('WeatherController', function($scope, $http) {
       });
 });
 
+
+
 app.controller('SearchController', function ($scope, $http) {
 
-    function searchLocation() {
-        console.log('ur trash')
-    }
+  $scope.searchLocation = () => {
+    console.log('ur trash')
+  }
 
   });
