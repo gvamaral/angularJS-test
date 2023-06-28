@@ -1,11 +1,31 @@
 :root {
-    --color-blue: #0000FF;
+    --color-white: #EFF1F3;
+    --color-black: #223843;
+    --color-dark-white: #DBD3D8;
+    --color-light-orange: #D8B4A0;
+    --color-orange: #D77A61;
+    --color-dark-orange: #98473E;
 }
-.weatherCard {
-    font-size: 100px;
-}
+
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
-    background-color: var(--color-blue);
-    font-size: 10px;
+    background-color: var(--color-white);
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.searchInput {
+    margin: 10px;
+}
+
+.weatherCard {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }

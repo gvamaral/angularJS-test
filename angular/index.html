@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-      <div class="searchInput">
-          <input />
+      <div class="searchInput" ng-controller="SearchController">
+          <input onclick="searchLocation()"/>
+          <button>Search</button>
       </div>
 
       <div class="weatherCard" ng-controller="WeatherController">
-        <h1>Current Weather</h1>
-        <p>Location {{}}</p>
-        <p>Temperature: {{ weather.current_weather.temperature}}°F</p>
-        <p>Day/Night: {{ weather.current_weather.is_day }}</p>
-        <p>https://open-meteo.com/en/docs</p>
+        <h2>Current Weather</h2>
+        <p>Location {{location}}</p>
+        <p>Temperature: {{temp_F}}°F</p>
+        <p>Date: {{ date }}</p>
+        <p>https://wttr.in/?format=j1</p>
       </div>
 
   </body>
