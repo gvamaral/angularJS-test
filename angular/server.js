@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const path = require('path');
+
 
 app.get('/', (req, res) => {
   fs.readFile('index.html', 'utf8', (err, data) => {
@@ -16,30 +18,42 @@ app.get('/', (req, res) => {
 
 
 
-// app.get('/index.js', (req, res) => {
-//   fs.readFile('index.js', 'utf8', (err, data) => {
+app.get('/index.js', (req, res) => {
+  fs.readFile('index.js', 'utf8', (err, data) => {
+    if (err) {
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.status(200).type('js').send(data);
+    }
+  });
+});
+
+
+
+
+// app.get('/WeatherController.js', (req, res) => {
+//   fs.readFile('WeatherController.js', 'utf8', (err, data) => {
 //     if (err) {
 //       res.status(500).send('Internal Server Error');
 //     } else {
-//       res.status(200).type('js').send(data);
+//       res.status(200).type('text/javascript').send(data);
+//     }
+//   });
+// });
+
+// app.get('/controllers/SearchController.js', (req, res) => {
+//   fs.readFile('controllers/SearchController.js', 'utf8', (err, data) => {
+//     if (err) {
+//       res.status(500).send('Internal Server Error');
+//     } else {
+//       res.status(200).type('text/javascript').send(data);
 //     }
 //   });
 // });
 
 
 
-const path = require('path');
 
-app.get('/controllers/:file', (req, res) => {
-  const filePath = path.join(__dirname, 'controllers', req.params.file);
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      res.status(500).send('Internal Server Error');
-    } else {
-      res.status(200).type('text/javascript').send(data);
-    }
-  });
-});
 
 
 
