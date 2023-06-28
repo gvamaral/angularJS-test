@@ -1,13 +1,6 @@
-// require('./angular');
-// module.exports = angular;
-
-
 var app = angular.module('weatherApp', []);
 
-
-
-
-app.controller('WeatherController', function($scope, $http) {
+app.controller('WeatherController', function ($scope, $http) {
     $scope.weather = {};
     //Getting api
     
@@ -23,15 +16,5 @@ app.controller('WeatherController', function($scope, $http) {
         
         
         console.log($scope.weather)
-      });
+        });
 });
-
-
-
-app.controller('SearchController', function ($scope, $http) {
-
-  $scope.searchLocation = () => {
-    console.log('ur trash')
-  }
-
-  });

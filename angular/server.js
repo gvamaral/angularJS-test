@@ -16,15 +16,33 @@ app.get('/', (req, res) => {
 
 
 
-app.get('/index.js', (req, res) => {
-  fs.readFile('index.js', 'utf8', (err, data) => {
+// app.get('/index.js', (req, res) => {
+//   fs.readFile('index.js', 'utf8', (err, data) => {
+//     if (err) {
+//       res.status(500).send('Internal Server Error');
+//     } else {
+//       res.status(200).type('js').send(data);
+//     }
+//   });
+// });
+
+
+
+const path = require('path');
+
+app.get('/controllers/:file', (req, res) => {
+  const filePath = path.join(__dirname, 'controllers', req.params.file);
+  fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
       res.status(500).send('Internal Server Error');
     } else {
-      res.status(200).type('js').send(data);
+      res.status(200).type('text/javascript').send(data);
     }
   });
 });
+
+
+
 
 
 app.use(express.static('./public'));
