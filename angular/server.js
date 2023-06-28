@@ -12,7 +12,8 @@ const server = http.createServer((req, res) => {
         res.end(data);
       }
     });
-  } else if (req.url === '/index.js') {
+    } 
+  else if (req.url === '/index.js') {
     fs.readFile('index.js', 'utf8', (err, data) => {
       if (err) {
         res.writeHead(500, { 'Content-Type': 'text/plain' });

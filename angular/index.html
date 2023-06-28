@@ -8,12 +8,15 @@
     <script src="index.js"></script>
   </head>
   <body>
+      <div class="searchInput">
+          <input />
+      </div>
 
-    <div ng-controller="WeatherController">
+      <div class="weatherCard" ng-controller="WeatherController">
         <h1>Current Weather</h1>
         <p>Location {{}}</p>
         <p>Temperature: {{ weather.current_weather.temperature}}°F</p>
-        <p>DayNight: {{ weather.current_weather.is_day }}</p>
+        <p>Day/Night: {{ weather.current_weather.is_day }}</p>
         <p>https://open-meteo.com/en/docs</p>
       </div>
 
