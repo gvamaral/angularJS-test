@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app="weatherApp">
+  <head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <!-- <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+
+    <div ng-controller="WeatherController">
+        <h1>Current Weather</h1>
+        <p>Location {{}}</p>
+        <p>Temperature: {{ weather.current_weather.temperature}}°F</p>
+        <p>DayNight: {{ weather.current_weather.is_day }}</p>
+        <p>https://open-meteo.com/en/docs</p>
+      </div>
+
+  </body>
+</html>
