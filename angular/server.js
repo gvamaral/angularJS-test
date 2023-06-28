@@ -24,6 +24,17 @@ const server = http.createServer((req, res) => {
       }
     });
   }
+  else if (req.url === '/index.css') {
+    fs.readFile('index.css', 'utf8', (err, data) => {
+      if (err) {
+        res.writeHead(500, { 'Content-Type': 'text/plain' });
+        res.end('Internal Server Error');
+      } else {
+        res.writeHead(200, { 'Content-Type': 'stylesheet' });
+        res.end(data);
+      }
+    });
+  }
 });
 
 const port = 3000;
