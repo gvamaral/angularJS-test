@@ -1,0 +1,9 @@
+:root {
+    --color-blue: #0000FF;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-blue);
+    font-size: 10px;
+}
