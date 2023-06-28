@@ -31,8 +31,8 @@ app.get('/index.js', (req, res) => {
 
 
 
-// app.get('/WeatherController.js', (req, res) => {
-//   fs.readFile('WeatherController.js', 'utf8', (err, data) => {
+// app.get('/controllers/WeatherController.js', (req, res) => {
+//   fs.readFile('controllers/WeatherController.js', 'utf8', (err, data) => {
 //     if (err) {
 //       res.status(500).send('Internal Server Error');
 //     } else {
