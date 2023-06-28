@@ -1,7 +1,9 @@
 :root {
     --color-blue: #0000FF;
 }
-
+.weatherCard {
+    font-size: 100px;
+}
 body {
     margin: 0;
     background-color: var(--color-blue);
