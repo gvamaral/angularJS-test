@@ -1,31 +1,80 @@
-:root {
-    --color-white: #EFF1F3;
-    --color-black: #223843;
-    --color-dark-white: #DBD3D8;
-    --color-light-orange: #D8B4A0;
-    --color-orange: #D77A61;
-    --color-dark-orange: #98473E;
+* {
+    margin:0;
 }
-
 body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    background-color: var(--color-white);
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
+    background-image: url(../images/sunnySky.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:100vh;
+}
+.header {
+    width:100%;
+    height:10%;
+    display:flex;
+}
+.headerInside1 {
+    width:33.33%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+}
+.headerInside2 {
+    width:33.33%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.headerInside3 {
+    width:33.33%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+}
+#menuIcon {
+    font-size:30px;
+    color:white;
+    margin-left:20px;
+}
+.blackout {
+    width:100%;
+    height:100%;
+    background-color:rgba(0, 0, 0, 0.37);
+}
+#sunIcon {
+    font-size:50px;
+    color:yellow;
+}
+.searchBar {
+    border-radius:10px;
+    width:300px;
+    height:35px;
+    border:none;
+    margin-right:30px;
+    padding-left:10px;
 }
 
-.searchInput {
-    margin: 10px;
-}
 
+.weatherCardSection {
+    width:100%;
+    height:90%;;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 .weatherCard {
-    display: flex;
-    flex-direction: column;
-    margin: 30px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width:700px;
+    height:600px;
+    background-color:white;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+.temp {
+    font-size:80px;
 }

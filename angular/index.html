@@ -2,7 +2,7 @@
 <html lang="en" ng-app="weatherApp">
   <head>
     <meta charset="utf-8">
-    <title>My HTML File</title>
+    <title>Weather Bits</title>
     <!-- <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" /> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="index.js"></script>
@@ -10,20 +10,56 @@
     <!-- <script src="controllers/WeatherController.js"></script> -->
     
     <link rel="stylesheet" href="styles/index.css" />
+
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/c7915cc9e8.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>   
+
   </head>
   <body>
-      <div class="searchInput" ng-controller="SearchController">
-          <input ng-model="city"/>
-          <button ng-click="searchLocation()">Search</button>
+    <div class="blackout">
+      <div class="header">
+        <div class="headerInside1"><i data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" id="menuIcon" class="fa-solid fa-bars"></i></div>
+        <div class="headerInside2"><i id="sunIcon" class="fa-solid fa-sun"></i></div>
+        <div class="headerInside3"><input class="searchBar" placeholder="Search..." type="search"/></div>
       </div>
 
-      <div class="weatherCard" ng-controller="WeatherController">
+      <div class="weatherCardSection">
+        <div class="weatherCard" ng-controller="WeatherController">
+          <h1 class="location">{{location}}</h1>
+          <p class="temp">{{temp_F}}°F</p>
+          <p>{{ date }}</p>
+        </div>
+      </div>
+
+    </div>
+
+ <!-- <div class="searchInput" ng-controller="SearchController">
+          <input ng-model="city"/>
+          <button ng-click="searchLocation()">Search</button>
+      </div> -->
+
+      <!-- <div class="weatherCard" ng-controller="WeatherController">
         <h2>Current Weather</h2>
         <p>Location {{location}}</p>
         <p>Temperature: {{temp_F}}°F</p>
         <p>Date: {{ date }}</p>
         <p>https://wttr.in/?format=j1</p>
+      </div> -->
+      
+      <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="staticBackdropLabel">Weather Bits</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            Hello World!
+          </div>
+        </div>
       </div>
-
   </body>
 </html>
