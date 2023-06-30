@@ -20,15 +20,16 @@
 
   </head>
   <body>
-    <div class="blackout">
+    <div class="blackout" ng-controller="WeatherController">
       <div class="header">
         <div class="headerInside1"><i data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" id="menuIcon" class="fa-solid fa-bars"></i></div>
         <div class="headerInside2"><i id="sunIcon" class="fa-solid fa-sun"></i></div>
-        <div class="headerInside3"><input class="searchBar" placeholder="Search..." type="search"/></div>
+        <div class="headerInside3"><input ng-model="city" class="searchBar" placeholder="Search..." type="search"/></div>
+        <button ng-click="searchLocation()"><i id="moonIcon" class="fa-solid fa-moon"></i></button>
       </div>
 
       <div class="weatherCardSection">
-        <div class="weatherCard" ng-controller="WeatherController">
+        <div class="weatherCard" >
           <h1 class="location">{{location}}</h1>
           <p class="temp">{{temp_F}}°F</p>
           <p>{{ date }}</p>
