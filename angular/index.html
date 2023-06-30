@@ -21,12 +21,14 @@
   </head>
   <body>
     <div class="blackout" ng-controller="WeatherController">
-      <div class="header">
-        <div class="headerInside1"><i data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" id="menuIcon" class="fa-solid fa-bars"></i></div>
-        <div class="headerInside2" ng-click="screenMode()"><i id="{{sorm}}Icon" class="fa-solid fa-{{sorm}}"></i></div>
-        <div class="headerInside3"><input ng-model="city" class="searchBar" placeholder="Search..." type="search"/></div>
-        <button ng-click="searchLocation()"><i id="moonIcon" class="fa-solid fa-moon"></i></button>
-      </div>
+        <div class="header">
+            <div class="headerInside1"><i data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" id="menuIcon" class="fa-solid fa-bars"></i></div>
+            <div class="headerInside2" ng-click="screenMode()"><i id="{{SorM}}Icon" class="fa-solid fa-{{SorM}}"></i></div>
+            <div class="headerInside3">
+                <input ng-model="city" class="searchBar" placeholder="Search..." type="search" ></input>
+                <button ng-click="searchLocation()"><i id="searchIcon" class="fa-solid fa-search"></i></button>
+            </div>
+        </div>
 
       <div class="weatherCardSection">
         <div class="weatherCard" >
