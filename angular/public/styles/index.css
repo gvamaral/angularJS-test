@@ -1,3 +1,13 @@
+:root {
+    --color-white: #EFF1F3;
+    --color-black: #223843;
+    --color-dark-white: #DBD3D8;
+    --color-light-orange: #D8B4A0;
+    --color-orange: #D77A61;
+    --color-dark-orange: #98473E;
+    --color-yellow: #F6AE2D;
+    --color-purple: #9381FF;
+}
 * {
     margin:0;
 }
@@ -46,7 +56,11 @@ body {
 }
 #sunIcon {
     font-size:50px;
-    color:yellow;
+    color:var(--color-yellow);
+}
+#moonIcon {
+    font-size:50px;
+    color:var(--color-purple);
 }
 .searchBar {
     border-radius:10px;

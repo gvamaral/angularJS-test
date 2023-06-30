@@ -81,6 +81,7 @@ let WEATHER_SYMBOL = {
 app.controller('WeatherController', function($scope, $http) {
     $scope.weather = {};
     $scope.city = '';
+    $scope.sorm = 'sun';
     //Getting api
     
     $http.get(`https://wttr.in/?format=j1`)
@@ -110,6 +111,18 @@ app.controller('WeatherController', function($scope, $http) {
                 //Error where it doesn't pass as a json object
             })
 
+    }
+
+    $scope.screenMode = () => {
+        let body = angular.element(document.querySelector('body'));
+        if ($scope.sorm === 'sun') {
+            $scope.sorm = 'moon'
+            body.css('background-image','url(../images/nightTime.jpg)')
+        }
+        else if ($scope.sorm === 'moon') {
+            $scope.sorm = 'sun'
+            body.css('background-image','url(../images/sunnySky.jpg)')
+        }
     }
 });
 
