@@ -124,13 +124,23 @@ app.controller('WeatherController', function($scope, $http) {
 
     $scope.screenMode = () => {
         let body = angular.element(document.querySelector('body'));
+        let weatherCard = angular.element(document.querySelector('.weatherCard'));
+        let searchBar = angular.element(document.querySelector('.searchBar'));
         if ($scope.SorM === 'sun') {
             $scope.SorM = 'moon'
-            body.css('background-image','url(../images/nightTime.jpg)')
+            body.css('background-image', 'url(../images/nightTime.jpg)');
+            weatherCard.css('background-color', 'var(--color-black)');
+            weatherCard.css('color', 'var(--color-white)');
+            searchBar.css('background-color', 'var(--color-black)');
+            searchBar.css('color', 'var(--color-white)');
         }
         else if ($scope.SorM === 'moon') {
             $scope.SorM = 'sun'
-            body.css('background-image','url(../images/sunnySky.jpg)')
+            body.css('background-image', 'url(../images/sunnySky.jpg)');
+            weatherCard.css('background-color', 'var(--color-white)');
+            weatherCard.css('color', 'var(--color-black)');
+            searchBar.css('background-color', 'var(--color-white)');
+            searchBar.css('color', 'var(--color-black)');
         }
     }
 });
