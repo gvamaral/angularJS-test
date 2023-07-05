@@ -56,25 +56,25 @@ let WWO_CODE = {
     "395": "HeavySnowShowers",
 }
 let WEATHER_SYMBOL = {
-    "Unknown": "✨",
-    "Cloudy": "☁️",
-    "Fog": "🌫",
-    "HeavyRain": "🌧",
-    "HeavyShowers": "🌧",
-    "HeavySnow": "❄️",
-    "HeavySnowShowers": "❄️",
-    "LightRain": "🌦",
-    "LightShowers": "🌦",
-    "LightSleet": "🌧",
-    "LightSleetShowers": "🌧",
-    "LightSnow": "🌨",
-    "LightSnowShowers": "🌨",
-    "PartlyCloudy": "⛅️",
-    "Sunny": "☀️",
-    "ThunderyHeavyRain": "⛈️",
-    "ThunderyShowers": "⛈",
-    "ThunderySnowShowers": "⛈",
-    "VeryCloudy": "☁️",
+    "Unknown": "tornado-icon.png",
+    "Cloudy": "clody-icon.png",
+    "Fog": "cloud-fog-icon.png",
+    "HeavyRain": "cloud-heavy-rain-icon.png",
+    "HeavyShowers": "cloud-heavy-rain-icon.png",
+    "HeavySnow": "cloud-heavy-snow-icon.png",
+    "HeavySnowShowers": "cloud-heavy-snow-icon.png",
+    "LightRain": "cloud-rain-icon.png",
+    "LightShowers": "cloud-rain-icon.png",
+    "LightSleet": "cloud-rain-icon.png",
+    "LightSleetShowers": "cloud-rain-icon.png",
+    "LightSnow": "cloud-snow-icon.png",
+    "LightSnowShowers": "cloud-snow-icon.png",
+    "PartlyCloudy": "clody-icon.png",
+    "Sunny": "sun-icon.png",
+    "ThunderyHeavyRain": "cloud-lightning-heavy-rain-icon.png",
+    "ThunderyShowers": "cloud-lightning-rain-icon.png",
+    "ThunderySnowShowers": "cloud-lightning-snow-icon.png",
+    "VeryCloudy": "cloud-icon.png",
 }
 
 
@@ -92,11 +92,20 @@ app.controller('WeatherController', function($scope, $http) {
 
         $scope.location = $scope.weather.nearest_area[0].areaName[0].value;
         $scope.temp_F = $scope.weather.current_condition[0].temp_F;
-        $scope.date = new Date().toUTCString();
+        $scope.date = $scope.weather.current_condition[0].localObsDateTime;
         
         
         console.log($scope.weather)
     });
+
+    let timeNow = new Date().toLocaleTimeString();
+    let hourNow = timeNow.split(':')[0];
+
+    if (hourNow > 18 || hourNow < 6) {
+        if ($scope.SorM === 'sun') {
+            $scope.screenMode();
+        }
+    };
 
     $scope.searchLocation = () => {
         let url = `https://wttr.in/${$scope.city}?format=j1`
@@ -106,7 +115,7 @@ app.controller('WeatherController', function($scope, $http) {
                 console.log($scope.weather)
                 $scope.location = $scope.weather.nearest_area[0].areaName[0].value;
                 $scope.temp_F = $scope.weather.current_condition[0].temp_F;
-                $scope.date = new Date().toUTCString();
+                $scope.date = $scope.weather.current_condition[0].localObsDateTime;
                 //Edit weather scope
                 //Error where it doesn't pass as a json object
             })
