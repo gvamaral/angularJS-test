@@ -8,7 +8,7 @@
     <script src="index.js"></script>
     <!-- <script src="controllers/SearchController.js"></script> -->
     <!-- <script src="controllers/WeatherController.js"></script> -->
-    
+    <link rel="icon" type="image/x-icon" href="/images/weatherBits-logo.png">
     <link rel="stylesheet" href="styles/index.css" />
 
     <!-- Font Awesome Link -->
@@ -30,17 +30,29 @@
             </div>
         </div>
 
-      <div class="weatherCardSection">
-        <div class="weatherCard" >
-          <h1 class="location">{{location}}</h1>
-          <p class="temp">{{temp_F}}°F</p>
-          <p>{{ date }}</p>
+        <div class="weatherCardSection">
+            <div class="weatherCard" >
+                <div class="today">
+                    <h1 class="location">{{location}}</h1>
+                    <p class="temp">{{temp_F}}°F</p>
+                    <p>{{ date }}</p>
+                </div>
+                <div class="hourly">
+                    <div>12:00 am<i id="searchIcon" class="fa-solid fa-search"></i><h2>43F</h2></div>
+                    <div>12:00 am<i id="searchIcon" class="fa-solid fa-search"></i><h2>43F</h2></div>
+                    <div>12:00 am<i id="searchIcon" class="fa-solid fa-search"></i><h2>43F</h2></div>
+                    <div>12:00 am<i id="searchIcon" class="fa-solid fa-search"></i><h2>43F</h2></div>
+                    <div>12:00 am<i id="searchIcon" class="fa-solid fa-search"></i><h2>43F</h2></div>
+                    <div>12:00 am<i id="searchIcon" class="fa-solid fa-search"></i><h2>43F</h2></div>
+                    <div>12:00 am<i id="searchIcon" class="fa-solid fa-search"></i><h2>43F</h2></div>
+                    <div>12:00 am<i id="searchIcon" class="fa-solid fa-search"></i><h2>43F</h2></div>
+                </div>
+            </div>
         </div>
-      </div>
 
     </div>
 
- <!-- <div class="searchInput" ng-controller="SearchController">
+  <!-- <div class="searchInput" ng-controller="SearchController">
           <input ng-model="city"/>
           <button ng-click="searchLocation()">Search</button>
       </div> -->
