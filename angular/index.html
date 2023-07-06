@@ -25,7 +25,7 @@
             <div class="headerInside1"><i data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" id="menuIcon" class="fa-solid fa-bars"></i></div>
             <div class="headerInside2" ng-click="screenMode()"><i id="{{SorM}}Icon" class="fa-solid fa-{{SorM}}"></i></div>
             <div class="headerInside3">
-                <input ng-model="city" class="searchBar" placeholder="Search..." type="search" ></input>
+                <input ng-model="city" class="searchBar" placeholder="City,State..." type="search" ></input>
                 <button class="searchBarButton" ng-click="searchLocation()"><i id="searchIcon" class="fa-solid fa-search"></i></button>
             </div>
         </div>
@@ -35,6 +35,10 @@
           <h1 class="location">{{location}}</h1>
           <p class="temp">{{temp_F}}°F</p>
           <p>{{ date }}</p>
+
+            <div class="weekWeather">
+                Week Of
+            </div>
         </div>
       </div>
 

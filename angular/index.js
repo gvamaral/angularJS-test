@@ -108,7 +108,8 @@ app.controller('WeatherController', function($scope, $http) {
     };
 
     $scope.searchLocation = () => {
-        let url = `https://wttr.in/${$scope.city}?format=j1`
+        let url = `https://wttr.in/${$scope.city}, ${$scope.state}?format=j1`;
+   
         $http.get(url)
             .then(function (res) {
                 $scope.weather = res.data
@@ -118,7 +119,9 @@ app.controller('WeatherController', function($scope, $http) {
                 $scope.date = $scope.weather.current_condition[0].localObsDateTime;
                 //Edit weather scope
                 //Error where it doesn't pass as a json object
+                console.log($scope.weather.weather[0].hourly);
             })
+
 
     }
 
