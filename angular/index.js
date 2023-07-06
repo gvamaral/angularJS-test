@@ -98,14 +98,6 @@ app.controller('WeatherController', function($scope, $http) {
         console.log($scope.weather)
     });
 
-    let timeNow = new Date().toLocaleTimeString();
-    let hourNow = timeNow.split(':')[0];
-
-    if (hourNow > 18 || hourNow < 6) {
-        if ($scope.SorM === 'sun') {
-            $scope.screenMode();
-        }
-    };
 
     $scope.searchLocation = () => {
         let url = `https://wttr.in/${$scope.city}, ${$scope.state}?format=j1`;
@@ -129,6 +121,10 @@ app.controller('WeatherController', function($scope, $http) {
         let body = angular.element(document.querySelector('body'));
         let weatherCard = angular.element(document.querySelector('.weatherCard'));
         let searchBar = angular.element(document.querySelector('.searchBar'));
+        let searchButton = angular.element(document.querySelector('.searchBarButton'));
+        let offCanvas = angular.element(document.querySelector('.offcanvas'));
+        let todayInfo = angular.element(document.querySelector('.today'));
+        let hourlyInfo = angular.element(document.querySelector('.hourly'));
         if ($scope.SorM === 'sun') {
             $scope.SorM = 'moon'
             body.css('background-image', 'url(../images/nightTime.jpg)');
@@ -136,6 +132,10 @@ app.controller('WeatherController', function($scope, $http) {
             weatherCard.css('color', 'var(--color-white)');
             searchBar.css('background-color', 'var(--color-black)');
             searchBar.css('color', 'var(--color-white)');
+            searchButton.css('background-color', 'var(--color-black)');
+            searchButton.css('color', 'var(--color-white)');
+            offCanvas.css('background-color', 'var(--color-black)');
+            offCanvas.css('color', 'var(--color-white)');
         }
         else if ($scope.SorM === 'moon') {
             $scope.SorM = 'sun'
@@ -144,8 +144,22 @@ app.controller('WeatherController', function($scope, $http) {
             weatherCard.css('color', 'var(--color-black)');
             searchBar.css('background-color', 'var(--color-white)');
             searchBar.css('color', 'var(--color-black)');
+            searchButton.css('background-color', 'var(--color-white)');
+            searchButton.css('color', 'var(--color-black)');
+            offCanvas.css('background-color', 'var(--color-white)');
+            offCanvas.css('color', 'var(--color-black)');
         }
     }
+
+
+    let timeNow = new Date().toLocaleTimeString();
+    let hourNow = timeNow.split(':')[0];
+
+    if (hourNow > 18 || hourNow < 6) {
+        if ($scope.SorM === 'sun') {
+            $scope.screenMode();
+        }
+    };
 });
 
 
