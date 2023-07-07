@@ -2,7 +2,7 @@
 <html lang="en" ng-app="weatherApp">
   <head>
     <meta charset="utf-8">
-    <title>Weather Bits</title>
+    <title>About</title>
     <!-- <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" /> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="index.js"></script>
@@ -20,39 +20,9 @@
 
   </head>
   <body>
-    <div class="blackout" ng-controller="WeatherController">
-        <div class="header">
-            <div class="headerInside1"><i data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" id="menuIcon" class="fa-solid fa-bars"></i></div>
-            <div class="headerInside2" ng-click="screenMode()"><i id="{{SorM}}Icon" class="fa-solid fa-{{SorM}}"></i></div>
-            <div class="headerInside3">
-                <input ng-model="city" class="searchBar" placeholder="City,State..." type="search" ></input>
-                <button class="searchBarButton" ng-click="searchLocation()"><i id="searchIcon" class="fa-solid fa-search"></i></button>
-            </div>
-        </div>
-
-      <div class="weatherCardSection">
-        <div class="weatherCard" >
-          <h1 class="location">{{location}}</h1>
-          <p class="temp">{{temp_F}}°F</p>
-          <p>{{ date }}</p>
-        </div>
-      </div>
-
-    </div>
-
-  <!-- <div class="searchInput" ng-controller="SearchController">
-          <input ng-model="city"/>
-          <button ng-click="searchLocation()">Search</button>
-      </div> -->
-
-      <!-- <div class="weatherCard" ng-controller="WeatherController">
-        <h2>Current Weather</h2>
-        <p>Location {{location}}</p>
-        <p>Temperature: {{temp_F}}°F</p>
-        <p>Date: {{ date }}</p>
-        <p>https://wttr.in/?format=j1</p>
-      </div> -->
       
+    <h1> About the Team Behind Weather Bits</h1>
+
       <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="staticBackdropLabel">Weather Bits</h5>
@@ -60,7 +30,7 @@
         </div>
         <div class="offcanvas-body">
           <div>
-           <a href="./public/about.html"> About </a>
+           <a href="../index.html"> Home </a>
           </div>
         </div>
       </div>
