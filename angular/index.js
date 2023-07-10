@@ -82,24 +82,25 @@ app.controller('WeatherController', function($scope, $http) {
     $scope.weather = {};
     $scope.city = '';
     $scope.SorM = 'sun';
-    
+    //Getting api
+
     $http.get(`https://wttr.in/?format=j1`)
-    
+
     .then(function(response) {
         $scope.weather = response.data;
 
         $scope.location = $scope.weather.nearest_area[0].areaName[0].value;
         $scope.temp_F = $scope.weather.current_condition[0].temp_F;
         $scope.date = $scope.weather.current_condition[0].localObsDateTime;
-        
-        
+
+
         console.log($scope.weather)
     });
 
 
     $scope.searchLocation = () => {
         let url = `https://wttr.in/${$scope.city}, ${$scope.state}?format=j1`;
-   
+
         $http.get(url)
             .then(function (res) {
                 $scope.weather = res.data
@@ -161,8 +162,6 @@ app.controller('WeatherController', function($scope, $http) {
 
 
 //app.controller('SearchController', function ($scope, $http) {
-      
-      
 //      $scope.searchLocation = () => {
 //          let url = `https://wttr.in/${$scope.city}?format=j1`
 //          $http.get(url)
@@ -173,7 +172,5 @@ app.controller('WeatherController', function($scope, $http) {
 //          //   //Edit weather scope
 //          //Error where it doesn't pass as a json object
 //          })
-          
 //      }
-
 //  });
