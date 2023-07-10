@@ -82,12 +82,10 @@ app.controller('WeatherController', function($scope, $http) {
     $scope.weather = {};
     $scope.city = '';
     $scope.SorM = 'sun';
-    //Getting api
     
     $http.get(`https://wttr.in/?format=j1`)
     
     .then(function(response) {
-        //Setting the weather scope to the data
         $scope.weather = response.data;
 
         $scope.location = $scope.weather.nearest_area[0].areaName[0].value;
@@ -111,7 +109,6 @@ app.controller('WeatherController', function($scope, $http) {
                 $scope.date = $scope.weather.current_condition[0].localObsDateTime;
                 //Edit weather scope
                 //Error where it doesn't pass as a json object
-                console.log($scope.weather.weather[0].hourly);
             })
 
 
