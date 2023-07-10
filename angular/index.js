@@ -164,8 +164,8 @@ app.controller('WeatherController', function($scope, $http) {
 
 
 //app.controller('SearchController', function ($scope, $http) {
-      
-      
+
+
 //      $scope.searchLocation = () => {
 //          let url = `https://wttr.in/${$scope.city}?format=j1`
 //          $http.get(url)
@@ -176,7 +176,5 @@ app.controller('WeatherController', function($scope, $http) {
 //          //   //Edit weather scope
 //          //Error where it doesn't pass as a json object
 //          })
-          
 //      }
-
 //  });
