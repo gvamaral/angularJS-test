@@ -82,10 +82,10 @@ app.controller('WeatherController', function($scope, $http) {
     $scope.weather = {};
     $scope.city = '';
     $scope.SorM = 'sun';
+    $scope.showHourWeather = false;
+
     //Getting api
-
     $http.get(`https://wttr.in/?format=j1`)
-
     .then(function(response) {
         $scope.weather = response.data;
 
@@ -121,6 +121,7 @@ app.controller('WeatherController', function($scope, $http) {
         let searchBar = angular.element(document.querySelector('.searchBar'));
         let searchButton = angular.element(document.querySelector('.searchBarButton'));
         let offCanvas = angular.element(document.querySelector('.offcanvas'));
+        let hover = angular.element(document.querySelector('.hover-1'));
         let todayInfo = angular.element(document.querySelector('.today'));
         let hourlyInfo = angular.element(document.querySelector('.hourly'));
         if ($scope.SorM === 'sun') {
@@ -134,6 +135,7 @@ app.controller('WeatherController', function($scope, $http) {
             searchButton.css('color', 'var(--color-white)');
             offCanvas.css('background-color', 'var(--color-black)');
             offCanvas.css('color', 'var(--color-white)');
+            $scope.myStyle = '{--c: var(--color-orange)}'
         }
         else if ($scope.SorM === 'moon') {
             $scope.SorM = 'sun'
@@ -146,6 +148,25 @@ app.controller('WeatherController', function($scope, $http) {
             searchButton.css('color', 'var(--color-black)');
             offCanvas.css('background-color', 'var(--color-white)');
             offCanvas.css('color', 'var(--color-black)');
+            $scope.myStyle = '{--c: var(--color-purple)}'
+
+        }
+    }
+
+    $scope.displayHourlyWeather = () => {
+        let weatherNow = angular.element(document.querySelector('.weatherNow'));
+        let weatherCard = angular.element(document.querySelector('.weatherCard'));
+        let hourCards = angular.element(document.querySelector('.hourCards'));
+
+        if ($scope.showHourWeather === false) {
+            $scope.showHourWeather = true;
+
+        }
+        else if ($scope.showHourWeather === true) {
+            $scope.showHourWeather = false;
+        }
+        else {
+            console.error('Something happened on displayHourlyWeather');
         }
     }
 

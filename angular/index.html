@@ -20,25 +20,42 @@
 
   </head>
   <body>
-    <div class="blackout" ng-controller="WeatherController">
-        <div class="header">
-            <div class="headerInside1"><i data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" id="menuIcon" class="fa-solid fa-bars"></i></div>
-            <div class="headerInside2" ng-click="screenMode()"><i id="{{SorM}}Icon" class="fa-solid fa-{{SorM}}"></i></div>
-            <div class="headerInside3">
-                <input ng-model="city" ng-keyup="$event.keyCode == 13 && searchLocation()" class="searchBar" placeholder="City,State..." type="search" ></input>
-                <button class="searchBarButton" ng-click="searchLocation()"><i id="searchIcon" class="fa-solid fa-search"></i></button>
-            </div>
-        </div>
+      <div class="blackout" ng-controller="WeatherController">
+          <div class="header">
+              <div class="headerInside1"><i data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" id="menuIcon" class="fa-solid fa-bars"></i></div>
+              <div class="headerInside2" ng-click="screenMode()"><i id="{{SorM}}Icon" class="fa-solid fa-{{SorM}}"></i></div>
+              <div class="headerInside3">
+                  <input ng-model="city" ng-keyup="$event.keyCode == 13 && searchLocation()" class="searchBar" placeholder="City,State..." type="search"></input>
+                  <button class="searchBarButton" ng-click="searchLocation()"><i id="searchIcon" class="fa-solid fa-search"></i></button>
+              </div>
+          </div>
 
-      <div class="weatherCardSection">
-        <div class="weatherCard" >
-          <h1 class="location">{{location}}</h1>
-          <p class="temp">{{temp_F}}°F</p>
-          <p>{{ date }}</p>
-        </div>
+          <div class="weatherCardSection">
+              <div class="weatherCard" ng-click="displayHourlyWeather()">
+                  <div class="weatherNow">
+                      <h1 class="location">{{location}}</h1>
+                      <p class="temp">{{temp_F}}°F</p>
+                      <p>{{ date }}</p>
+                  </div>
+                  <div class="hourCards" ng-if="showHourWeather">
+                      <div class="hourCardLeft">
+                          <h5>12 AM</h5>
+                          <div class="hourIcon"></div>
+                          <h1 class="hourDegree">60°</h1>
+                      </div>
+                      <div class="hourCardRight">
+                          <h5>Precipitation: 50%</h5>
+                          <div class="gradient"></div>
+                          <h5>UV Index: 2</h5>
+                      </div>
+                  </div>
+              </div>
+              
+          </div>
+
+          
+
       </div>
-
-    </div>
 
   <!-- <div class="searchInput" ng-controller="SearchController">
           <input ng-model="city"/>
@@ -60,7 +77,7 @@
         </div>
         <div class="offcanvas-body">
           <div>
-           <a ng-href="/about.html"> About </a>
+           <a class="sidebarLink hover-1" ng-style="myStyle" ng-href="/about.html"> About </a>
           </div>
         </div>
       </div>

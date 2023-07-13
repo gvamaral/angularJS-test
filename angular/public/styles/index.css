@@ -115,3 +115,67 @@ body {
 .hourly {
     display: none;
 }
+
+/* Weather Hour Card */
+
+.hourCards {
+    width: 450px;
+    height: 80px;
+    background-color: #ededed;
+    border-radius: 10px;
+    display: flex;
+}
+
+.hourCardLeft {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hourCardRight {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hourIcon {
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/sun-icon.png);
+    background-size: cover;
+}
+
+.hourDegree {
+    font-size: 50px;
+}
+
+.sidebarLink {
+    text-decoration: none;
+    color: inherit;
+
+}
+/* hover animation for side bar */
+.hover-1 {
+    --c: var(--color-orange); /* the color */
+    --s: .15em;
+    line-height: 1.1em;
+    padding-bottom: calc(2.1*var(--s));
+    background: conic-gradient(from 135deg at top,var(--c) 90deg,#0000 0) left 0 bottom var(--s)/calc(2*var(--s)) var(--s) repeat-x, conic-gradient(from -45deg at bottom,var(--c) 90deg,#0000 0) left var(--s) bottom 0/calc(2*var(--s)) var(--s) repeat-x;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) 0/var(--_p,0%) padding-box no-repeat;
+    transition: .5s;
+}
+.hover-1:hover {
+    --_p: 100%;
+    color: var(--c);
+}
+.gradient {
+    width: 200px;
+    height: 5px;
+    background: rgb(14,201,0);
+    background: linear-gradient(90deg, rgba(14,201,0,1) 0%,rgba(255,252,0,1) 50%, rgba(255,0,0,1) 100%);
+}
