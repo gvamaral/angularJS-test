@@ -212,27 +212,6 @@ app.controller('WeatherController', function($scope, $http) {
             else if ($scope.SorM === 'moon') {
                 $scope.dark = true;
             }
-
-            //animation
-            shrinkText.css('animation-duration', '1.5s');
-            shrinkText.css('animation-name', 'shrinkSlide');
-            //
-
-
-            shrinkText.css('position', 'absolute');
-            shrinkText.css('top', '19%');
-            shrinkText.css('padding', '0%');
-
-
-            textChange.css('font-size', '15px');
-            textChange.css('text-align', 'center');
-
-            tempChange.css('font-size', '65px');
-            tempChange.css('text-align', 'center');
-
-            locationChange.css('font-size', '22px');
-            locationChange.css('text-align', 'center');
-
         }
         else if ($scope.showHourWeather === true) {
             $scope.showHourWeather = false;
