@@ -92,6 +92,26 @@ app.controller('WeatherController', function($scope, $http) {
         $scope.location = $scope.weather.nearest_area[0].areaName[0].value;
         $scope.temp_F = $scope.weather.current_condition[0].temp_F;
         $scope.date = $scope.weather.current_condition[0].localObsDateTime;
+        $scope.zeroAmTempF = $scope.weather.weather[0].hourly[0].tempF;
+        $scope.threeAmTempF = $scope.weather.weather[0].hourly[1].tempF;
+        $scope.sixAmTempF = $scope.weather.weather[0].hourly[2].tempF;
+        $scope.nineAmTempF = $scope.weather.weather[0].hourly[3].tempF;
+        $scope.twelvePmTempF = $scope.weather.weather[0].hourly[4].tempF;
+        $scope.threePmTempF = $scope.weather.weather[0].hourly[5].tempF;
+        $scope.sixPmTempF = $scope.weather.weather[0].hourly[6].tempF;
+        $scope.ninePmTempF = $scope.weather.weather[0].hourly[7].tempF;
+        $scope.zeroAmUvIndex = $scope.weather.weather[0].hourly[0].uvindex;
+        $scope.threeAmUvIndex = $scope.weather.weather[0].hourly[1].uvindex;
+        $scope.sixAmUvIndex = $scope.weather.weather[0].hourly[2].uvindex;
+        $scope.nineAmUvIndex = $scope.weather.weather[0].hourly[3].uvindex;
+        $scope.twelvePmUvIndex = $scope.weather.weather[0].hourly[4].uvindex;
+        $scope.threePmUvIndex = $scope.weather.weather[0].hourly[5].uvindex;
+        $scope.sixPmUvIndex = $scope.weather.weather[0].hourly[6].uvindex;
+        $scope.ninePmUvIndex = $scope.weather.weather[0].hourly[7].uvindex;
+
+
+
+        console.log($scope.weather)
     });
 
 
@@ -105,6 +125,23 @@ app.controller('WeatherController', function($scope, $http) {
                 $scope.location = $scope.weather.nearest_area[0].areaName[0].value;
                 $scope.temp_F = $scope.weather.current_condition[0].temp_F;
                 $scope.date = $scope.weather.current_condition[0].localObsDateTime;
+                $scope.zeroAmTempF = $scope.weather.weather[0].hourly[0].tempF;
+                $scope.threeAmTempF = $scope.weather.weather[0].hourly[1].tempF;
+                $scope.sixAmTempF = $scope.weather.weather[0].hourly[2].tempF;
+                $scope.nineAmTempF = $scope.weather.weather[0].hourly[3].tempF;
+                $scope.twelvePmTempF = $scope.weather.weather[0].hourly[4].tempF;
+                $scope.threePmTempF = $scope.weather.weather[0].hourly[5].tempF;
+                $scope.sixPmTempF = $scope.weather.weather[0].hourly[6].tempF;
+                $scope.ninePmTempF = $scope.weather.weather[0].hourly[7].tempF;
+                $scope.zeroAmUvIndex = $scope.weather.weather[0].hourly[0].uvindex;
+                $scope.threeAmUvIndex = $scope.weather.weather[0].hourly[1].uvindex;
+                $scope.sixAmUvIndex = $scope.weather.weather[0].hourly[2].uvindex;
+                $scope.nineAmUvIndex = $scope.weather.weather[0].hourly[3].uvindex;
+                $scope.twelvePmUvIndex = $scope.weather.weather[0].hourly[4].uvindex;
+                $scope.threePmUvIndex = $scope.weather.weather[0].hourly[5].uvindex;
+                $scope.sixPmUvIndex = $scope.weather.weather[0].hourly[6].uvindex;
+                $scope.ninePmUvIndex = $scope.weather.weather[0].hourly[7].uvindex;
+
                 //Edit weather scope
                 //Error where it doesn't pass as a json object
             })
@@ -119,6 +156,7 @@ app.controller('WeatherController', function($scope, $http) {
         let searchButton = angular.element(document.querySelector('.searchBarButton'));
         let offCanvas = angular.element(document.querySelector('.offcanvas'));
         let hover = angular.element(document.querySelector('.hover-1'));
+        let hourCards = angular.element(document.querySelectorAll('.hourCards'));
         let todayInfo = angular.element(document.querySelector('.today'));
         let hourlyInfo = angular.element(document.querySelector('.hourly'));
         if ($scope.SorM === 'sun') {
@@ -132,7 +170,11 @@ app.controller('WeatherController', function($scope, $http) {
             searchButton.css('color', 'var(--color-white)');
             offCanvas.css('background-color', 'var(--color-black)');
             offCanvas.css('color', 'var(--color-white)');
-            $scope.myStyle = '{--c: var(--color-orange)}';
+            hourCards.css('background-color', 'var(--color-dark-black)');
+            if ($scope.showHourWeather === true) {
+                $scope.light = false;
+                $scope.dark = true;
+            }
         }
         else if ($scope.SorM === 'moon') {
             $scope.SorM = 'sun'
@@ -145,9 +187,11 @@ app.controller('WeatherController', function($scope, $http) {
             searchButton.css('color', 'var(--color-black)');
             offCanvas.css('background-color', 'var(--color-white)');
             offCanvas.css('color', 'var(--color-black)');
-            $scope.myStyle = '{--c: var(--color-purple)}';
-
-
+            hourCards.css('background-color', 'var(--color-dark-white)');
+            if ($scope.showHourWeather === true) {
+                $scope.dark = false;
+                $scope.light = true;
+            }
         }
     }
 
@@ -162,6 +206,12 @@ app.controller('WeatherController', function($scope, $http) {
 
         if ($scope.showHourWeather === false) {
             $scope.showHourWeather = true;
+            if ($scope.SorM === 'sun') {
+                $scope.light = true;
+            }
+            else if ($scope.SorM === 'moon') {
+                $scope.dark = true;
+            }
 
             //animation
             shrinkText.css('animation-duration', '1.5s');
@@ -185,6 +235,13 @@ app.controller('WeatherController', function($scope, $http) {
 
         }
         else if ($scope.showHourWeather === true) {
+            $scope.showHourWeather = false;
+            if ($scope.SorM === 'sun') {
+                $scope.light = false;
+            }
+            else if ($scope.SorM === 'moon') {
+                $scope.dark = false;
+            }
         }
         else {
             console.error('Something happened on displayHourlyWeather');

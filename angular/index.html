@@ -37,6 +37,7 @@
                       <p class="temp tempChange">{{temp_F}}°F</p>
                       <p class="textChange">{{ date }}</p>
                   </div>
+<<<<<<< HEAD
                 
                   
                   <div class="hourCards" ng-if="showHourWeather">
@@ -44,11 +45,130 @@
                           <h5>12 AM</h5>
                           <div class="hourIcon"></div>
                           <h1 class="hourDegree">60°</h1>
+=======
+                  <div ng-if="light">
+                      <div class="hourCards light">
+                          <div class="hourCardLeft">
+                              <h5>12 AM</h5>
+                              <div class="hourIcon"></div>
+                              <h1 class="hourDegree">{{zeroAmTempF}}°</h1>
+                          </div>
+                          <div class="hourCardRight">
+                              <h5>Precipitation: 50%</h5>
+                              <div class="gradient"></div>
+                              <h5>UV Index: {{zeroAmUvIndex}}</h5>
+                          </div>
+>>>>>>> 74fb22a076a9aab966041f8dfb05def3fbffc3bd
                       </div>
-                      <div class="hourCardRight">
-                          <h5>Precipitation: 50%</h5>
-                          <div class="gradient"></div>
-                          <h5>UV Index: 2</h5>
+                      <div class="hourCards light">
+                          <div class="hourCardLeft">
+                              <h5>3 AM</h5>
+                              <div class="hourIcon"></div>
+                              <h1 class="hourDegree">{{threeAmTempF}}°</h1>
+                          </div>
+                          <div class="hourCardRight">
+                              <h5>Precipitation: 40%</h5>
+                              <div class="gradient"></div>
+                              <h5>UV Index: {{threeAmUvIndex}}</h5>
+                          </div>
+                      </div>
+                      <div class="hourCards light">
+                          <div class="hourCardLeft">
+                              <h5>6 AM</h5>
+                              <div class="hourIcon"></div>
+                              <h1 class="hourDegree">{{sixAmTempF}}°</h1>
+                          </div>
+                          <div class="hourCardRight">
+                              <h5>Precipitation: 40%</h5>
+                              <div class="gradient"></div>
+                              <h5>UV Index: {{sixAmUvIndex}}</h5>
+                          </div>
+                      </div>
+                      <div class="hourCards light">
+                          <div class="hourCardLeft">
+                              <h5>9 AM</h5>
+                              <div class="hourIcon"></div>
+                              <h1 class="hourDegree">{{nineAmTempF}}°</h1>
+                          </div>
+                          <div class="hourCardRight">
+                              <h5>Precipitation: 40%</h5>
+                              <div class="gradient"></div>
+                              <h5>UV Index: {{nineAmUvIndex}}</h5>
+                          </div>
+                      </div>
+                      <div class="hourCards light">
+                          <div class="hourCardLeft">
+                              <h5>12 PM</h5>
+                              <div class="hourIcon"></div>
+                              <h1 class="hourDegree">{{twelvePmTempF}}°</h1>
+                          </div>
+                          <div class="hourCardRight">
+                              <h5>Precipitation: 40%</h5>
+                              <div class="gradient"></div>
+                              <h5>UV Index: {{twelvePmUvIndex}}</h5>
+                          </div>
+                      </div>
+                      <div class="hourCards light">
+                          <div class="hourCardLeft">
+                              <h5>3 PM</h5>
+                              <div class="hourIcon"></div>
+                              <h1 class="hourDegree">{{threePmTempF}}°</h1>
+                          </div>
+                          <div class="hourCardRight">
+                              <h5>Precipitation: 40%</h5>
+                              <div class="gradient"></div>
+                              <h5>UV Index: {{threePmUvIndex}}</h5>
+                          </div>
+                      </div>
+                      <div class="hourCards light">
+                          <div class="hourCardLeft">
+                              <h5>6 PM</h5>
+                              <div class="hourIcon"></div>
+                              <h1 class="hourDegree">{{sixPmTempF}}°</h1>
+                          </div>
+                          <div class="hourCardRight">
+                              <h5>Precipitation: 40%</h5>
+                              <div class="gradient"></div>
+                              <h5>UV Index: {{sixPmUvIndex}}</h5>
+                          </div>
+                      </div>
+                      <div class="hourCards light">
+                          <div class="hourCardLeft">
+                              <h5>9 PM</h5>
+                              <div class="hourIcon"></div>
+                              <h1 class="hourDegree">{{ninePmTempF}}°</h1>
+                          </div>
+                          <div class="hourCardRight">
+                              <h5>Precipitation: 40%</h5>
+                              <div class="gradient"></div>
+                              <h5>UV Index: {{ninePmUvIndex}}</h5>
+                          </div>
+                      </div>
+                  </div>
+                  <div ng-if="dark">
+                      <div class="hourCards dark">
+                          <div class="hourCardLeft">
+                              <h5>12 AM</h5>
+                              <div class="hourIcon"></div>
+                              <h1 class="hourDegree">60°</h1>
+                          </div>
+                          <div class="hourCardRight">
+                              <h5>Precipitation: 50%</h5>
+                              <div class="gradient"></div>
+                              <h5>UV Index: 1</h5>
+                          </div>
+                      </div>
+                      <div class="hourCards dark">
+                          <div class="hourCardLeft">
+                              <h5>3 AM</h5>
+                              <div class="hourIcon"></div>
+                              <h1 class="hourDegree">63°</h1>
+                          </div>
+                          <div class="hourCardRight">
+                              <h5>Precipitation: 40%</h5>
+                              <div class="gradient"></div>
+                              <h5>UV Index: 2</h5>
+                          </div>
                       </div>
                   </div>
 
