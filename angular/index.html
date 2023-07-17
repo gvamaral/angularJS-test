@@ -32,10 +32,10 @@
 
           <div class="weatherCardSection">
               <div class="weatherCard" ng-click="displayHourlyWeather()">
-                  <div class="weatherNow">
-                      <h1 class="location">{{location}}</h1>
-                      <p class="temp">{{temp_F}}°F</p>
-                      <p>{{ date }}</p>
+                  <div class="weatherNow" id="shrinkText">
+                      <h1 class="location locationChange" >{{location}}</h1>
+                      <p class="temp tempChange">{{temp_F}}°F</p>
+                      <p class="textChange">{{ date }}</p>
                   </div>
                   <div ng-if="light">
                       <div class="hourCards light">

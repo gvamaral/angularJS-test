@@ -199,6 +199,10 @@ app.controller('WeatherController', function($scope, $http) {
         let weatherNow = angular.element(document.querySelector('.weatherNow'));
         let weatherCard = angular.element(document.querySelector('.weatherCard'));
         let hourCards = angular.element(document.querySelector('.hourCards'));
+        let shrinkText = angular.element(document.querySelector('#shrinkText'));
+        let textChange = angular.element(document.querySelectorAll('.textChange'));
+        let tempChange = angular.element(document.querySelectorAll('.tempChange'));
+        let locationChange = angular.element(document.querySelectorAll('.locationChange'));
 
         if ($scope.showHourWeather === false) {
             $scope.showHourWeather = true;
@@ -208,6 +212,27 @@ app.controller('WeatherController', function($scope, $http) {
             else if ($scope.SorM === 'moon') {
                 $scope.dark = true;
             }
+
+            //animation
+            shrinkText.css('animation-duration', '1.5s');
+            shrinkText.css('animation-name', 'shrinkSlide');
+            //
+
+
+            shrinkText.css('position', 'absolute');
+            shrinkText.css('top', '19%');
+            shrinkText.css('padding', '0%');
+
+
+            textChange.css('font-size', '15px');
+            textChange.css('text-align', 'center');
+
+            tempChange.css('font-size', '65px');
+            tempChange.css('text-align', 'center');
+
+            locationChange.css('font-size', '22px');
+            locationChange.css('text-align', 'center');
+
         }
         else if ($scope.showHourWeather === true) {
             $scope.showHourWeather = false;

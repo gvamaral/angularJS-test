@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" ng-app="weatherApp">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>About</title>
     <!-- <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" /> -->
@@ -15,34 +16,43 @@
     <script src="https://kit.fontawesome.com/c7915cc9e8.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap Link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 
-  </head>
-  <body>
+</head>
 
-      <div class="headerInside1"><i data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" id="menuIcon" class="fa-solid fa-bars"></i></div>
+<body>
+    <div class="headerInsideAbout"><i data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
+            aria-controls="staticBackdrop" id="menuIcon" class="fa-solid fa-bars"></i>
+    </div>
 
-      <h1> About Weather Bits</h1>
+    <div class="mainContent">
+        <h1> About Weather Bits</h1>
 
-      <p>
-          Weather Bits is a weather app made for outdoor enthusiasts who want a simple and refreshing experience.
-          Our team strives to provide any viewer with weather information to better plan your commutes.
-      </p>
+        <p>
+            Weather Bits is a weather app made for outdoor enthusiasts who want a simple and refreshing experience.
+            Our team strives to provide any viewer with weather information to better plan your commutes.
+        </p>
 
-      <p> <a href="https://account.venmo.com/u/Brooke-Strickland-24" target="_blank"> Donate </a> now to help our team make better applications for you </p>
+        <p> <a href="https://account.venmo.com/u/Brooke-Strickland-24" target="_blank"> Donate </a> now to help our team
+            make better applications for you </p>
+    </div>
+    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" id="staticBackdrop"
+        aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="staticBackdropLabel">Weather Bits</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                <a href="/" class="hover-1 sidebarLink"> Home </a>
+            </div>
+        </div>
+    </div>
 
-      <div class="offcanvas offcanvas-start" data-bs-backdrop="static" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-          <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="staticBackdropLabel">Weather Bits</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-              <div>
-                  <a href="/"> Home </a>
-              </div>
-          </div>
-      </div>
+</body>
 
-  </body>
 </html>
