@@ -92,9 +92,6 @@ app.controller('WeatherController', function($scope, $http) {
         $scope.location = $scope.weather.nearest_area[0].areaName[0].value;
         $scope.temp_F = $scope.weather.current_condition[0].temp_F;
         $scope.date = $scope.weather.current_condition[0].localObsDateTime;
-
-
-        console.log($scope.weather)
     });
 
 
