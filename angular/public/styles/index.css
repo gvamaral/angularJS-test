@@ -136,6 +136,10 @@ body {
 
 /* Weather Hour Card */
 
+.textChange, .tempChange {
+    text-align: center;
+}
+
 .hourCards {
     width: 450px;
     height: 80px;

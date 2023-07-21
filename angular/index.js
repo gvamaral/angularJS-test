@@ -208,18 +208,23 @@ app.controller('WeatherController', function($scope, $http) {
             $scope.showHourWeather = true;
             if ($scope.SorM === 'sun') {
                 $scope.light = true;
+                weatherNow.css('top', '15%')
             }
             else if ($scope.SorM === 'moon') {
                 $scope.dark = true;
+                weatherNow.css('top', '15%')
             }
         }
         else if ($scope.showHourWeather === true) {
             $scope.showHourWeather = false;
             if ($scope.SorM === 'sun') {
                 $scope.light = false;
+                weatherNow.css('top', '30%')
+
             }
             else if ($scope.SorM === 'moon') {
                 $scope.dark = false;
+                weatherNow.css('top', '30%')
             }
         }
         else {
